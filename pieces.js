@@ -1,8 +1,11 @@
 
-//CODE AVANT LA REFACTORISASION
+    import { ajoutClientsAvis } from "./avis.js"
+
 // Récupération des pièces depuis le fichier JSON
     const reponse = await fetch("pieces-autos.json");
     const pieces = await reponse.json();
+
+//CODE DE GENERATION DU DOM
     function genererPieces(pieces){
         for (let i = 0; i < pieces.length; i++) {
 
@@ -15,7 +18,7 @@
 
 
 
-    //On crée les balises html:
+    // On crée les balises html:
           const imageElement = document.createElement("img");
           imageElement.src = article.image;
           const nomElement = document.createElement("h2");
@@ -46,6 +49,8 @@
     //appendChild Bouton Avis
           pieceElement.appendChild(avisBouton);
     }
+    //Appel fonction AVIS importée
+          ajoutClientsAvis();
   }
 
 
