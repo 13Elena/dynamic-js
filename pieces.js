@@ -28,18 +28,23 @@
           descriptionElement.innerText = article.description ?? "Pas de description pour le moment.";
           const dispoElement = document.createElement("p");
           dispoElement.innerText = `${article.disponibilite? "En stock":"Rupture de stock"}`;
-
+          const avisBouton = document.createElement("button");
+    //Creation boutons avis pour chaque article
+          avisBouton.dataset.id = article.id;
+          avisBouton.textContent ="Afficher les avis";
 
     //On rattache les elements au document en utilisent un PARENT (dans ce cas la balise <section class = "fiches">)
 
           sectionFiches.appendChild(pieceElement);
-      //On change du coup "sectionFiches" par "pieceElement":
+    //On change du coup "sectionFiches" par "pieceElement":
           pieceElement.appendChild(imageElement);
           pieceElement.appendChild(nomElement);
           pieceElement.appendChild(prixElement);
           pieceElement.appendChild(categorieElement);
           pieceElement.appendChild(descriptionElement);
           pieceElement.appendChild(dispoElement);
+    //appendChild Bouton Avis
+          pieceElement.appendChild(avisBouton);
     }
   }
 
